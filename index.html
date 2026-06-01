@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moderna Povijest Hrvatske - Interaktivna Povijest</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="wiki-header">
+      <div class="header-content">
+        <h1>Moderna <span>Povijest</span> Hrvatske</h1>
+        <div class="search-box">
+          <span class="search-icon"> </span>
+          <input
+            type="text"
+            placeholder="Pretraži povijest..."
+            id="searchInput"
+          />
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="hero">
+        <h2>Put kroz Stoljeća</h2>
+        <p>
+          Otkrijte fascinantnu povijest Hrvatske - od Ilirskog pokreta do
+          članstva u Europskoj uniji. Kroz interaktivnu kartu i detaljne priče
+          upoznajte ključne trenutke koji su oblikovali današnju Hrvatsku.
+        </p>
+      </div>
+
+      <nav class="era-nav">
+        <button class="era-btn active" data-era="prelude">Predgovor</button>
+        <button class="era-btn" data-era="illyrian">Ilirski pokret</button>
+        <button class="era-btn" data-era="austria">Austrougraska</button>
+        <button class="era-btn" data-era="kingdom">Kraljevina</button>
+        <button class="era-btn" data-era="yugoslavia">Jugoslavija</button>
+        <button class="era-btn" data-era="independence">Neovisnost</button>
+        <button class="era-btn" data-era="eu">EU i danas</button>
+      </nav>
+
+      <!-- Predgovor -->
+      <section class="content-section active" id="prelude">
+        <h2>Korijeni moderne Hrvatske</h2>
+
+        <img
+          src="slike/mgz-fot-12504-scaled.jpg"
+          alt="Zagreb"
+          class="era-image"
+        />
+        <p class="era-image-caption">Zagreb - prijestolnica kroz stoljeća</p>
+
+        <p>
+          Moderna povijest Hrvatske počinje krajem 18. stoljeća, u vrijeme kada
+          je hrvatski narod počeo intenzivnije raditi na očuvanju svog
+          nacionalnog identiteta, jezika i kulture. Ovaj period obilježen je
+          brojnim političkim, društvenim i kulturnim promjenama koje su
+          oblikovale suvremenu Hrvatsku.
+        </p>
+
+        <div class="highlight-box">
+          <p>
+            <strong> Važno:</strong> Hrvatska ima dugu povijest kao neovisna
+            država još od srednjeg vijeka, kada je postojala Kraljevina Hrvatska
+            u personalnoj uniji s Ugarskom (1102.), a kasnije i kao dio
+            Habsburške Monarhije (1527.-1918.).
+          </p>
+        </div>
+
+        <h3>Geografski i demografski kontekst</h3>
+        <p>
+          Hrvatska se nalazi u jugoistočnoj Europi, na Balkanskom poluotoku.
+          Graniči sa Slovenijom i Mađarskom na sjeveru, Srbijom na istoku,
+          Bosnom i Hercegovinom i Crnom Gorom na jugoistoku, te Italijom preko
+          Jadranskog mora na zapadu. Površina iznosi 56.594 km², a broj
+          stanovnika oko 4 milijuna.
+        </p>
+
+        <h3>Ključne karakteristike modernog razdoblja</h3>
+        <ul>
+          <li>
+            <strong> Nacionalni identitet:</strong> Hrvati su jedan od
+            najstarijih europskih naroda s kontinuiranom državnošću
+          </li>
+          <li>
+            <strong> Jezik:</strong> Hrvatski jezik pripada skupini
+            južnoslavenskih jezika i koristi latinicu
+          </li>
+          <li>
+            <strong>Religija:</strong> Većina stanovništva su katolici (preko
+            86%)
+          </li>
+          <li>
+            <strong>Gospodarstvo:</strong> Tranzicijsko gospodarstvo s
+            dominantnim uslužnim sektorom, osobito turizmom
+          </li>
+        </ul>
+
+        <!-- Interaktivna karta -->
+        <div class="map-section">
+          <h3>Interaktivna karta Hrvatske</h3>
+          <div id="croatia-map"></div>
+          <div class="map-legend">
+            <div class="legend-item">
+              <div class="legend-color" style="background: #c9a227"></div>
+              <span>Glavni grad</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #3a6ea5"></div>
+              <span>Povijesni gradovi</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color" style="background: #2a4a6a"></div>
+              <span>Granična područja</span>
+            </div>
+          </div>
+        </div>
+
+        <h3>Dokumenti iz razdoblja</h3>
+        <div class="documents">
+          <a
+            href="https://hr.wikipedia.org/wiki/Hrvatski_jezik"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Zakonski članak o hrvatskom jeziku</h4>
+            <span class="doc-year">1847.</span>
+            <span class="download-link">↗ Saznaj više na Wikipedia</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/Petar_Preradovi%C4%87"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Petar Preradović - "Zora puca"</h4>
+            <span class="doc-year">1844.</span>
+            <span class="download-link">↗ Saznaj više na Wikipedia</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/Ilirski_pokret"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Ilirski pokret</h4>
+            <span class="doc-year">1830.-1848.</span>
+            <span class="download-link">↗ Saznaj više na Wikipedia</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Ilirski pokret -->
+      <section class="content-section" id="illyrian">
+        <h2>Ilirski pokret (1830. - 1848.)</h2>
+        <img
+          src="slike/Vlaho_Bukovac,_Ilirski_preporod_(svecani_zastor_Hrvatskog_narodnog_kazalista_u_Zagrebu).jpg"
+          alt="Crkva sv. Marka"
+          class="era-image"
+        />
+        <a href="predgovor.html">više informacija</a>
+
+        <p class="era-image-caption">Hrvatsko narodno kazalište u Zagrebu</p>
+
+        <div class="stat-box">
+          <div class="stat">
+            <div class="stat-value">1834.</div>
+            <div class="stat-label">Prve Ilirske novine</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1847.</div>
+            <div class="stat-label">Hrv. jezik službeni</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">14</div>
+            <div class="stat-label">Godina trajanja</div>
+          </div>
+        </div>
+
+        <p>
+          Ilirski pokret bio je kulturni i politički pokret u Hrvatskoj čiji je
+          cilj bio buđenje nacionalne svijesti i kulturno ujedinjenje južnih
+          Slavena. Ime je dobio prema ilirskim plemenima koja su nekada
+          nastanjivala Balkanski poluotok.
+        </p>
+
+        <h3>Ključni događaji</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="year">1830.</span>
+            <p>
+              Ljudevit Gaj objavljuje "Kratku osnovu hrvatskoga pravopisanja" -
+              temelj standardizacije hrvatskog jezika
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1834.</span>
+            <p>
+              Osnovane Ilirske novine, prvi politički list na hrvatskom jeziku
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1842.</span>
+            <p>Osnovano Društvo prijatelja naroda hrvatskoga</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1847.</span>
+            <p>Hrvatski je proglašen službenim jezikom u Hrvatskom saboru</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1848.</span>
+            <p>Ilirski pokret prerasta u revolucionarne događaje</p>
+          </div>
+        </div>
+
+        <h3>Važne osobe pokreta</h3>
+
+        <div class="key-figure">
+          <div class="key-figure-avatar">LG</div>
+          <div class="key-figure-info">
+            <h4>Ljudevit Gaj (1809-1872)</h4>
+            <p>
+              Najpoznatiji predstavnik Ilirskog pokreta, poznat kao "otac
+              hrvatskog preporoda". Napisao je "Kratku osnovu" i uređivao
+              Ilirske novine.
+            </p>
+          </div>
+        </div>
+
+        <div class="key-figure">
+          <div class="key-figure-avatar">PP</div>
+          <div class="key-figure-info">
+            <h4>Petar Preradović (1818-1872)</h4>
+            <p>
+              Hrvatski pjesnik i jedan od vođa pokreta. Napisao je zbirku
+              "Pjesničke stvari" i bio prvi pjesnik koji je pisao isključivo na
+              hrvatskom jeziku.
+            </p>
+          </div>
+        </div>
+
+        <div class="key-figure">
+          <div class="key-figure-avatar">IK</div>
+          <div class="key-figure-info">
+            <h4>Ivan Kukuljević Sakcinski (1816-1889)</h4>
+            <p>
+              Povjesničar i političar koji je predložio da se hrvatski uvede u
+              škole i sudove.
+            </p>
+          </div>
+        </div>
+
+        <h3>Dokumenti</h3>
+        <div class="documents">
+          <a
+            href="https://hr.wikipedia.org/wiki/Ilirske_novine"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Ilirske novine</h4>
+            <span class="doc-year">1834.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/Ljudevit_Gaj"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Gajeva "Kratka osnova"</h4>
+            <span class="doc-year">1830.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/Ilirski_pokret"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Program Ilirskog pokreta</h4>
+            <span class="doc-year">1842.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- AustroUgarska -->
+      <section class="content-section" id="austria">
+        <h2>Austrougraska era (1867. - 1918.)</h2>
+        <img src="slike/paviljon.jpg" alt="Art Pavilion" class="era-image" />
+
+        <a href="austrougarska.html">više informacija</a>
+
+        <p class="era-image-caption">
+          Zagreb - Art Paviljon iz vremena Austro-Ugarske
+        </p>
+
+        <div class="highlight-box">
+          <p>
+            <strong> Dualizam:</strong> Austro-Ugarska je bila dualna monarhija
+            s dva jednaka dijela - austrijskim i ugarskim. Hrvatska je bila pod
+            ugarskim dijelom.
+          </p>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat">
+            <div class="stat-value">1867.</div>
+            <div class="stat-label">Austro-ugarska nagodba</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1868.</div>
+            <div class="stat-label">Hrvatsko-ugarska nagodba</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">51</div>
+            <div class="stat-label">Godina pod A-U</div>
+          </div>
+        </div>
+
+        <h3>Ključni događaji</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="year">1867.</span>
+            <p>Austro-ugarska nagodba - nastanak dualne monarhije</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1868.</span>
+            <p>
+              Hrvatsko-ugarska nagodba - definirani odnosi Hrvatske i Ugarske
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1894.</span>
+            <p>Osnovana Hrvatska stranka prava pod vodstvom Ante Starčevića</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1914.</span>
+            <p>Početak Prvog svjetskog rata - atentat u Sarajevu</p>
+          </div>
+        </div>
+
+        <h3>Političke stranke</h3>
+        <h4>Hrvatska stranka prava (HSP)</h4>
+        <p>
+          Osnovana 1894. godine pod vodstvom <strong>Ante Starčevića</strong>,
+          poznatog kao "Oca domovine". Stranka je zagovarala potpunu neovisnost
+          Hrvatske.
+        </p>
+
+        <h4>Hrvatska seljačka stranka (HSS)</h4>
+        <p>
+          Osnovana 1904. godine pod vodstvom <strong>Stjepana Radića</strong>.
+          Zalagala se za prava seljaka i demokratizaciju političkog sustava.
+        </p>
+
+        <h3>Dokumenti</h3>
+        <div class="documents">
+          <a
+            href="https://hr.wikipedia.org/wiki/Hrvatsko-ugarska_nagodba"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Hrvatsko-ugarska nagodba</h4>
+            <span class="doc-year">1868.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/Hrvatska_stranka_prava"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Program Hrvatske stranke prava</h4>
+            <span class="doc-year">1894.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Kraljevina -->
+      <section class="content-section" id="kingdom">
+        <h2>Kraljevina SHS / Jugoslavija (1918. - 1941.)</h2>
+        <img
+          src="slike/Ustavotvorna-skupstina-Kraljevine-SHS-28.-studeni-1920._0.jpg"
+          alt="Dubrovnik"
+          class="era-image"
+        />
+
+        <a href="kraljevina.html">više informacija</a>
+        <p class="era-image-caption">Ustavotvorna skupština kraljevine SHS</p>
+
+        <div class="highlight-box">
+          <p>
+            <strong> Važno:</strong> Ovo razdoblje bilo je obilježeno velikim
+            političkim previranjima, centralizmom iz Beograda i nezadovoljstvom
+            hrvatskog naroda.
+          </p>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat">
+            <div class="stat-value">1918.</div>
+            <div class="stat-label">Nastanak Kraljevstva</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1929.</div>
+            <div class="stat-label">Diktatura kralja</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1939.</div>
+            <div class="stat-label">Sporazum Cvetković-Maček</div>
+          </div>
+        </div>
+
+        <h3>Politički razvoj</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="year">29.10.1918.</span>
+            <p>Proglašenje Države Slovenaca, Hrvata i Srba u Zagrebu</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1.12.1918.</span>
+            <p>Ujedinjenje sa Srbijom - nastanak Kraljevstva SHS</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1921.</span>
+            <p>Usvojen Vidovdanski ustav - centralistički uređena država</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1928.</span>
+            <p>Atentat na Stjepana Radića u Skupštini</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1939.</span>
+            <p>Sporazum Cvetković-Maček - autonomija za Hrvatsku</p>
+          </div>
+        </div>
+
+        <h3>Dokumenti</h3>
+        <div class="documents">
+          <a
+            href="https://hr.wikipedia.org/wiki/Vidovdanski_ustav"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Vidovdanski ustav</h4>
+            <span class="doc-year">1921.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/Sporazum_Cvetković-Maček"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Sporazum Cvetković-Maček</h4>
+            <span class="doc-year">1939.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Jugoslavija -->
+      <section class="content-section" id="yugoslavia">
+        <h2>SFR Jugoslavija (1945. - 1991.)</h2>
+        <img
+          src="slike/8282263649_f459283412_b.jpg"
+          alt="Dubrovnik"
+          class="era-image"
+        />
+        <a href="jugoslavija.html">više informacija</a>
+
+        <p class="era-image-caption">Dubrovnik pod zaštitom UNESCO-a</p>
+
+        <div class="highlight-box">
+          <p>
+            <strong> Samoupravljanje:</strong> Jugoslavija je razvila
+            jedinstveni model "samoupravnog socijalizma" koji se razlikovao od
+            sovjetskog modela.
+          </p>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat">
+            <div class="stat-value">1945.</div>
+            <div class="stat-label">Nastanak SFRJ</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1948.</div>
+            <div class="stat-label">Raskid sa Staljinom</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">46</div>
+            <div class="stat-label">Godina trajanja</div>
+          </div>
+        </div>
+
+        <h3>Ključni događaji</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="year">1945.</span>
+            <p>
+              Osnovana Socijalistička Federativna Republika Jugoslavija (SFRJ)
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1948.</span>
+            <p>Raskid sa Sovjetskim Savezom</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1971.</span>
+            <p>Hrvatsko proljeće - nacionalni pokret za veću autonomiju</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1980.</span>
+            <p>Umro je Drug Tito</p>
+          </div>
+        </div>
+
+        <h3>Hrvatsko proljeće (1971.)</h3>
+        <p>
+          Hrvatsko proljeće, poznato i kao "Maspok", bio je demokratski pokret
+          za veću autonomiju Hrvatske. Pokret je predvođen hrvatskim
+          intelektualcima i studentima, a zahtijevao je veću kulturnu i
+          političku samostalnost.
+        </p>
+
+        <h3>Dokumenti</h3>
+        <div class="documents">
+          <a
+            href="https://hr.wikipedia.org/wiki/Hrvatsko_proljeće"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Hrvatsko proljeće</h4>
+            <span class="doc-year">1971.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/Samoupravljanje"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Samoupravljanje</h4>
+            <span class="doc-year">1950.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Neovisnost -->
+      <section class="content-section" id="independence">
+        <h2>🇭🇷 Rat za neovisnost (1991. - 1999.)</h2>
+        <img src="slike/domovinski_rat_14.jpg" alt="Zagreb" class="era-image" />
+        <p class="era-image-caption">prikaz domovinskog rata</p>
+
+        <div class="highlight-box">
+          <p>
+            <strong> Domovinski rat:</strong> Hrvatski branitelji su u ovom ratu
+            pokazali iznimnu hrabrost. Rat je trajao četiri godine i rezultirao
+            hrvatskom pobjedom.
+          </p>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat">
+            <div class="stat-value">25.6.1991.</div>
+            <div class="stat-label">Proglašenje neovisnosti</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1991-1995</div>
+            <div class="stat-label">Trajanje rata</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">1995.</div>
+            <div class="stat-label">Operacija Oluja</div>
+          </div>
+        </div>
+
+        <h3>Ključni događaji</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="year">1990.</span>
+            <p>
+              Prvi višestranački izbori - pobjeđuje HDZ pod vodstvom Franje
+              Tuđmana
+            </p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1991.</span>
+            <p>25. lipnja - Sabor proglašava neovisnost Hrvatske</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1991.</span>
+            <p>Bitka za Vukovar - simbol hrvatskog otpora</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1995.</span>
+            <p>Operacija Oluja - oslobođenje cijele Krajine</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">1998.</span>
+            <p>Završetak mirne reintegracije Podunavlja</p>
+          </div>
+        </div>
+
+        <h3>Dokumenti</h3>
+        <div class="documents">
+          <a
+            href="https://hr.wikipedia.org/wiki/Ustav_Republike_Hrvatske"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Ustav Republike Hrvatske</h4>
+            <span class="doc-year">1990.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/Domovinski_rat"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Domovinski rat</h4>
+            <span class="doc-year">1991.-1995.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- EU i danas -->
+      <section class="content-section" id="eu">
+        <h2>🇪🇺 Članstvo u EU i suvremena Hrvatska (2000. - danas)</h2>
+        <img
+          src="slike/pxl-090407-1646_660a57bb40b3b.webp"
+          alt="Zagreb"
+          class="era-image"
+        />
+        <p class="era-image-caption">Hrvatski ulazak u NATO savez</p>
+
+        <div class="highlight-box">
+          <p>
+            <strong> Članstvo u EU:</strong> Hrvatska je 1. srpnja 2013. postala
+            punopravna članica Europske unije. Od 2023. članica je i
+            schengenskog prostora, a koristi euro.
+          </p>
+        </div>
+
+        <div class="stat-box">
+          <div class="stat">
+            <div class="stat-value">2009.</div>
+            <div class="stat-label">Ulazak u NATO</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">2013.</div>
+            <div class="stat-label">Ulazak u EU</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value">2023.</div>
+            <div class="stat-label">Schengen i euro</div>
+          </div>
+        </div>
+
+        <h3>Ključni događaji</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="year">2009.</span>
+            <p>Ulazak u NATO savez</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2013.</span>
+            <p>Ulazak u Europsku uniju</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2022.</span>
+            <p>Uvođenje eura kao službene valute</p>
+          </div>
+          <div class="timeline-item">
+            <span class="year">2023.</span>
+            <p>Ulazak u schengenski prostor</p>
+          </div>
+        </div>
+
+        <h3>Turizam</h3>
+        <p>
+          Hrvatska je jedna od najpopularnijih turističkih destinacija u Europi,
+          poznata po svojoj obali, nacionalnim parkovima (Plitvice, Krka,
+          Kornati), kulturnoj baštini i mediteranskom ozračju. Godišnje Hrvatsku
+          posjeti preko 17 milijuna turista.
+        </p>
+
+        <h3>Dokumenti</h3>
+        <div class="documents">
+          <a
+            href="https://hr.wikipedia.org/wiki/Članstvo_Hrvatske_u_Europskoj_uniji"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Članstvo u EU</h4>
+            <span class="doc-year">2013.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+          <a
+            href="https://hr.wikipedia.org/wiki/NATO"
+            target="_blank"
+            class="doc-card"
+          >
+            <h4>Članstvo u NATO-u</h4>
+            <span class="doc-year">2009.</span>
+            <span class="download-link">↗ Saznaj više</span>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <footer class="wiki-footer">
+      <p>
+        Moderna povijest Hrvatske | Sadržaj dostupan pod Creative Commons
+        licencijom
+      </p>
+      <p>
+        Zadnja izmjena: Svibanj 2026. | Izradeno s ljubavlju za hrvatsku
+        povijest
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

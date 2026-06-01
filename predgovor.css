@@ -1,0 +1,121 @@
+:root {
+   --primary-dark: #0a0f1a;
+   --primary-blue: #0d1f3c;
+   --accent-blue: #1e3a5f;
+   --highlight: #3a6ea5;
+   --accent-gold: #c9a227;
+   --text-light: #e8f0f8;
+   --text-muted: #a8c0d8;
+   --border-color: #2a4a6a;
+   --card-bg: rgba(15, 30, 50, 0.85);
+        }
+body {
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+    color: var(--text-light);
+}
+
+header {
+    background-size: contain;
+    text-align: center;
+    padding: 30px;
+    color: #0a0f1a;
+    background-image: url(slike/24CN02-Old-Master-19th-Century-Paintings-Drawings-Prints-SaleInfoHeader.jpg);
+    border-bottom: 1px solid #2a4a6a;
+}
+
+header p {
+    color: wheat;
+}
+
+/*  GLAVNI LAYOUT FIX */
+main {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    gap: 30px;
+}
+
+/* LIJEVO */
+.timeline {
+    width: 35%;
+}
+
+/* DESNO */
+.details {
+    width: 65%;
+    background: rgba(15,30,50,0.8);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #2a4a6a;
+}
+
+/* EVENT KARTICE */
+.event {
+    background: rgba(30,58,95,0.4);
+    border: 1px solid #2a4a6a;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.event:hover {
+    background: rgba(58,110,165,0.4);
+    transform: translateX(5px);
+}
+
+.event h3 {
+    margin: 0;
+    color: var(--text-light);
+}
+
+/* TEKST DESNO */
+.details h2 {
+    color: var(--accent-gold);
+    margin-top: 0;
+}
+
+.details p {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .timeline, .details {
+        width: 100%;
+    }
+}
+
+    .era-image {
+        width: 100%;
+        max-height: 350px;
+        object-fit: cover;
+        border-radius: 16px;
+        margin-bottom: 15px;
+        border: 3px solid var(--border-color);
+        transition: all 0.4s ease;
+}
+    
+    .era-image:hover {
+        border-color: var(--highlight);
+        transform: scale(1.01);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+                }
+        
+    .era-image-caption {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+        font-style: italic;
+}
